@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible"
+        content="IE=edge"> 
+        <meta name="author" content="곽예린">
+        <meta name="description" content="연습용 페이지">
+        <meta name="keywords" content="공부, HTML, 실습">
+        <title>채팅방 만들기</title>
+        <link href="chat.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+        <style>
+            *{
+                font-family: "Jua", sans-serif;
+            }
+            .user__pic{
+                background-image: url(images/바위.jpg);
+                background-size: 50px 50px;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <main class="chat-screen">
+                <section class="chat-screen__bar">
+                    <div class="user">
+                        <div class="user__column">
+                            <div class="user__pic">                         
+                            </div>
+                        </div>
+                    
+                        <div class="user__column">
+                        <p class="user__nick">바위</p>
+                        <p class="user__count">2</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <form class="chat-form">
+                <section class="chat-form__field">
+                    <textarea class="chat-from__msg"></textarea>
+                    <input type="submit" value="전송" class="chat-form__bt">
+                </section>
+            </form>
+        </div>
+    </body>
+</html>

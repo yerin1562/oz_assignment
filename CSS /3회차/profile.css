@@ -1,0 +1,32 @@
+*{
+    text-align: center;
+    font-family: "Do Hyeon", sans-serif, monospace;
+}
+
+html{
+    background-color: hsl(240, 3%, 42%);
+    font-size: 16px;
+}
+
+body{
+    width: 640px;
+    margin: auto; /* 너비 여백을 동일하게 분배*/
+}
+
+h1{
+    font-size: 48px
+}
+
+img{
+    width: 200px;
+    height: 240px;
+    border-radius: 300px 300px 300px 300px
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+#funfacts{
+    line-height: 50px
+}

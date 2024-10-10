@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible"
+        content="IE=edge"> 
+        <meta name="author" content="곽예린">
+        <meta name="description" content="연습용 페이지">
+        <meta name="keywords" content="공부, HTML, 실습">
+        <title>의사 클래스 & 의사 요소</title>
+        <style>
+            .menu{
+                padding: 10px;
+                border-bottom: 1px solid black
+            }
+
+            .menu > li{
+                display: inline-block;
+                text-align: center;
+            }
+
+            li > a{
+                display: inline-block;
+                width: 80px;
+                padding: 10px;
+                text-decoration: none;
+            }
+
+            a:hover{
+                color: white;
+                background-color: grey;
+            }
+            a:active{
+                color: white;
+                background-color: black;
+            }
+
+            li:nth-child(2n-1){
+                font-size: 20px;
+            }
+
+            a::before{
+                content: "보기";
+                color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul class="menu">
+            <li><a href="#">사전</a></li>
+            <li><a href="#">뉴스</a></li>
+            <li><a href="#">증권</a></li>
+            <li><a href="#">지도</a></li>
+    </body>
+</html>

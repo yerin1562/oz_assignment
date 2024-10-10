@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible"
+        content="IE=edge"
+        > 
+        <meta name="author" content="곽예린">
+        <meta name="description" content="연습용 페이지">
+        <meta name="keywords" content="공부, HTML, 실습">
+        <title>문서 정보 관리하기</title>
+        <style>
+            *{
+                color: red;
+            }
+            /*
+            선택자 우선순위: 쓰여진 순서와 관계없이 적용되는 순위
+            1. 아이디 선택자
+            2. 클래스 선택자
+            3. 태그 선택자
+            */
+            #legend{
+                color: orange;
+            }
+            li{
+                color: blue;
+            }
+            li.young{
+                color:purple;
+            }
+            h2, p, li{
+                color: green;
+            }
+            
+        </style>
+    </head>
+<body>
+    <h2>T1 롤 팀</h2>
+    <p>T1은 역사가 있는 프로게이머 구단입니다
+        <br>
+        현재 선수단은 역대 최고 라고 할 수 있습니다.
+    </p>
+    <ul>
+        <li class="youngest">제우스</li>
+        <li class="young">오너</li>
+        <li class="old" id="legend">페이커</li>
+        <li class="young">구마유시</li>
+        <li class="young">케리아</li>
+    </ul>
+</body>
+</html>
