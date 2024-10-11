@@ -1,0 +1,30 @@
+.inline-select {
+    display: inline-block; /* 인라인 요소로 만듦 */
+    width: auto; /* 크기를 줄임 */
+    height: auto; /* 높이도 필요에 따라 조정 */
+}
+
+.signup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+#themeToggle {
+    position: relative;
+    top: 10px;
+    left: 15px;
+    
+}
+
+#datetime{
+    color: #024CAA; /* 원하는 색상으로 변경 (여기서는 주황색) */
+    background-color: white;
+    border-color: white;
+    position: fixed; /* 화면에 고정 */
+    bottom: 0; /* 화면 아래쪽 */
+    left: 50%; /* 가운데 정렬을 위해 left를 50%로 설정 */
+    transform: translateX(-50%); /* left 50%에 대해 중앙 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}

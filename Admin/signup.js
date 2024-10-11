@@ -51,6 +51,7 @@ form.addEventListener("submit", function(event){
         return
     }
 
+
     alert(`${userName}님 환영합니다! 
         아이디 : ${userId}
         이름 : ${userName}
