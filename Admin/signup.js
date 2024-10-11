@@ -51,6 +51,11 @@ form.addEventListener("submit", function(event){
         return
     }
 
+    if (userPhone.length !== 11 || !userPhone.startsWith('010')) {
+        alert("전화번호는 010으로 시작하고 11자로 입력해주세요.");
+        return;
+    }
+
 
     alert(`${userName}님 환영합니다! 
         아이디 : ${userId}
@@ -60,7 +65,7 @@ form.addEventListener("submit", function(event){
         성별 : ${userGender}`)
 
     //가입이 잘 되었습니다. 환영합니다!
-    window.location.href = "after.html"
+    window.location.href = "login.html"
     
 
 })
