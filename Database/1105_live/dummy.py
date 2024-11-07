@@ -66,7 +66,7 @@ try:
             for _ in range(20):
                 last_updated = fake.date_time_this_year()  # 현재 연도 내의 날짜 및 시간 생성
                 cursor.execute("""
-                    UPDATE stocks
+                    INSERT INTO stocks
                     SET last_updated = %s
                     WHERE raw_material_id = %s
                 """, (last_updated, raw_material_id))
@@ -77,7 +77,7 @@ try:
             ('Fish Bun', 'A delicious fish-shaped bun.', 3.00),
             ('Red Bean Bun', 'Sweet bun filled with red bean paste.', 2.50),
             ('Chocolate Bun', 'Decadent chocolate-filled bun.', 3.50),
-            ('Corn Bun', 'The greatest Gangwon corn bun.', 7.00)
+            ('Corn Bun', 'The greatest Gangwon corn bun.', 7.00) 
         ]
         for name, description, price in products:
             cursor.execute("""
