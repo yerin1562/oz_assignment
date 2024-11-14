@@ -1,0 +1,12 @@
+@app.route('/edit/<username>', methods=['GET', 'POST'])
+    def edit_user(username):
+        # 사용자 수정 뷰
+        user = next((user for user in users if user['username'] == username), None)
+        if not user:
+            return redirect(url_for('index'))
+    
+        if request.method == 'POST':
+            user['name'] = request.form['name']
+            return redirect(url_for('index'))
+    
+        return render_template('edit_user.html', user=user)
