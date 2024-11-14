@@ -75,13 +75,17 @@ def like_post(username, title):
     # 게시물을 찾지 못한 경우 오류 메시지 반환
     return {"message": "Post not found"}, 404
 
-@app.delete("/users/<string:username>")
-def delete_user(username):
-    # 전역 users 리스트에서 특정 사용자 삭제
-    global users
-    users = [user for user in users if user["username"] != username]
-    # 삭제 성공 메시지와 HTTP 상태코드 200 반환
-    return {"message": "User deleted"}, 200
+@app.delete("/users/post/delete/<string:username>/<string:title>")
+def delete_post(username, title):
+    # 해당 사용자를 찾고 게시물 삭제
+    for user in users:
+        if user["username"] == username:
+            for post in user["posts"]:
+                if post["title"] == title:
+                    user["posts"].remove(post)  # 게시물 삭제
+                    return {"message": f"Post '{title}' deleted"}, 200  # 성공 메시지 반환
+    # 게시물을 찾지 못한 경우 오류 메시지 반환
+    return {"message": "Post not found"}, 404
 
 # 애플리케이션 실행
 if __name__ == '__main__':
