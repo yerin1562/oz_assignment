@@ -4,4 +4,4 @@ from .models import User
 # Register your models here.
 @admin.register(User)
 class UsersAdmin(admin.ModelAdmin):
-		pass
+		list_display = ["name", "description", "age", "gender"]
