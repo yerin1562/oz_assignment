@@ -1,10 +1,13 @@
 from rest_framework.serializers import ModelSerializer
 from .models import Feed
 from users.serializers import FeedUserSerializer
+from reviews.serializers import ReviewSerializer
 
 class FeedSerializer(ModelSerializer):
 
-    user = FeedUserSerializer() # feed 의 user모델을 직렬화 하기 위해 필요한 코드
+    user = FeedUserSerializer(read_only=True)
+    review_set = ReviewSerializer(many=True, read_only=True)
+		# read_only => API 결과값에는 보이지만, put/post를 할 때는 파라미터를 넣어주지 않아도 된다.
 
     class Meta:
         model = Feed
