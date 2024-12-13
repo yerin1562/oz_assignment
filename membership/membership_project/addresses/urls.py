@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from rest_framework.authtoken.views import obtain_auth_token #추가
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView,TokenVerifyView)
 
 
 urlpatterns = [
@@ -9,5 +10,8 @@ urlpatterns = [
     path('/<int:user_id>/add', views.CreateUserAddress.as_view(), name='create-user-address'),
     path('/<int:pk>/update', views.UpdateAddress.as_view(), name='update-address'),
     path('/<int:pk>/delete', views.DeleteAddress.as_view(), name='delete-address'),
-    path("/getToken", obtain_auth_token)
+    path("/getToken", obtain_auth_token),
+    path("/login/simpleJWT", TokenObtainPairView.as_view()),#코드 추가 부분
+	path("/login/simpleJWT/refresh", TokenRefreshView.as_view()),#코드 추가 부분
+	path("/login/simpleJWT/verify", TokenVerifyView.as_view())#코드 추가 부분
 ]

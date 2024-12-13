@@ -46,7 +46,8 @@ CUSTOM_USER_APPS = [
     "feeds.apps.FeedsConfig",
     "reviews.apps.ReviewsConfig",
     "rest_framework",
-    "rest_framework.authtoken" 
+    "rest_framework.authtoken",
+    "rest_framework_simplejwt"
 ]
 
 
@@ -138,7 +139,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "users.User"
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication', # 추가
-    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ]
+}
+
+from datetime import timedelta
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=14),
+    "SIGNING_KEY": "SECRET",
+    "ALGORITHM": "HS256",
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }
