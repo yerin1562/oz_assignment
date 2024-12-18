@@ -8,9 +8,10 @@ from rest_framework.permissions import IsAuthenticated #추가
 
 
 class AddressList(APIView):
+    authentication_classes = [TokenAuthentication]  # 클래스 레벨로 이동
+    permission_classes = [IsAuthenticated]          # 클래스 레벨로 이동
+
     def get(self, request):
-        authentication_classes = [TokenAuthentication] # 추가
-        permission_classes = [IsAuthenticated]
         addresses = Address.objects.all()
         serializer = AddressSerializer(addresses, many=True)
         return Response(serializer.data)
